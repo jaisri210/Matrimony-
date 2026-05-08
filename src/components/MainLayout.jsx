@@ -1,6 +1,5 @@
 import Sidebar from "../components/Sidebar";
 import { Outlet } from "react-router-dom";
-import MobileNav from "./Mobilenav";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
