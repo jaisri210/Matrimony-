@@ -164,9 +164,6 @@ export default function Plans() {
           );
         })}
       </div>
-
-      {/* MOBILE NAV */}
-      <MobileNav />
     </div>
   );
 }
