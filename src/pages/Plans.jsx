@@ -3,7 +3,6 @@ import { getPlans, getMyPlan } from "../services/planApi";
 import API from "../services/axios";
 import toast from "react-hot-toast";
 import { COLORS } from "../../utils/colors.js";
-import MobileNav from "../components/Mobilenav.jsx";
 
 export default function Plans() {
   const [plans, setPlans] = useState([]);
