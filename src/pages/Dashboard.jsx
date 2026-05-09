@@ -438,43 +438,6 @@ export default function Dashboard() {
 
             {/* SUPPORT */}
             <div>
-              <h3 className="font-semibold text-gray-800 mb-3">Quick Links</h3>
-
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li>
-                  <Link to="/" className="hover:text-pink-500 transition">
-                    Home
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    to="/matches"
-                    className="hover:text-pink-500 transition"
-                  >
-                    Matches
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/plans" className="hover:text-pink-500 transition">
-                    Plans
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    to="/profile"
-                    className="hover:text-pink-500 transition"
-                  >
-                    Profile
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* SUPPORT */}
-            <div>
               <h3 className="font-semibold text-gray-800 mb-3">Support</h3>
 
               <ul className="space-y-2 text-sm text-gray-600">
