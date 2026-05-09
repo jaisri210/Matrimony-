@@ -7,7 +7,6 @@ const Login = () => {
   const [form, setForm] = useState({
     email: "",
     password: "",
-    rememberMe: false,
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -16,10 +15,11 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value } = e.target;
+
     setForm((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: value,
     }));
   };
 
@@ -41,8 +41,8 @@ const Login = () => {
         throw new Error("Invalid login response");
       }
 
-      // ✅ store properly (IMPORTANT)
-      localStorage.setItem("userId", res.data.user._id);
+      // ✅ store properly
+      localStorage.setItem("userId", user._id);
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
 
@@ -73,7 +73,6 @@ const Login = () => {
         <div className="hidden md:flex md:w-1/2 bg-[#701a28] text-white p-12 flex-col justify-between">
           <div>
             <h1 className="text-2xl font-bold flex items-center gap-2">
-              {/* <span className="p-1 bg-white rounded text-[#701a28]">❤️</span> */}
               <Heart className="text-[#701a28] fill-[#701a28]" size={20} />
               SoulKnot Matrimony
             </h1>
@@ -95,10 +94,12 @@ const Login = () => {
               <p className="font-bold">100%</p>
               <p className="text-gray-400">Verified Profiles</p>
             </div>
+
             <div>
               <p className="font-bold">10M+</p>
               <p className="text-gray-400">Happy Matches</p>
             </div>
+
             <div>
               <p className="font-bold">Privacy</p>
               <p className="text-gray-400">Our Priority</p>
@@ -110,6 +111,7 @@ const Login = () => {
         <div className="w-full md:w-1/2 p-8 md:p-12">
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800">Welcome Back</h2>
+
             <p className="text-gray-500 text-sm">
               Login to continue to your account
             </p>
@@ -121,8 +123,10 @@ const Login = () => {
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Email Address
               </label>
+
               <div className="relative">
                 <Mail className="absolute left-3 top-3 text-gray-400 size-5" />
+
                 <input
                   required
                   name="email"
@@ -140,8 +144,10 @@ const Login = () => {
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Password
               </label>
+
               <div className="relative">
                 <Lock className="absolute left-3 top-3 text-gray-400 size-5" />
+
                 <input
                   required
                   name="password"
@@ -149,7 +155,7 @@ const Login = () => {
                   placeholder="Enter your password"
                   value={form.password}
                   onChange={handleChange}
-                  className="pl-10 w-full border border-gray-300 rounded-lg p-2.5 focus:ring-2 focus:ring-pink-500 outline-none"
+                  className="pl-10 pr-10 w-full border border-gray-300 rounded-lg p-2.5 focus:ring-2 focus:ring-pink-500 outline-none"
                 />
 
                 <button
@@ -162,8 +168,9 @@ const Login = () => {
               </div>
             </div>
 
-            {/* BUTTON */}
+            {/* LOGIN BUTTON */}
             <button
+              type="submit"
               disabled={loading}
               className="w-full bg-[#e94e77] hover:bg-[#d43d66] text-white font-semibold py-3 rounded-lg transition-all shadow-md active:scale-[0.98]"
             >
@@ -171,6 +178,7 @@ const Login = () => {
             </button>
           </form>
 
+          {/* SIGNUP */}
           <p className="mt-8 text-center text-sm text-gray-600">
             Don't have an account?{" "}
             <Link to="/register" className="text-pink-600 font-bold">
