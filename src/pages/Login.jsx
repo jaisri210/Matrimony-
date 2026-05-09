@@ -162,24 +162,6 @@ const Login = () => {
               </div>
             </div>
 
-            {/* REMEMBER + FORGOT */}
-            <div className="flex items-center justify-between text-sm">
-              <label className="flex items-center gap-2 cursor-pointer text-gray-600">
-                <input
-                  type="checkbox"
-                  name="rememberMe"
-                  checked={form.rememberMe}
-                  onChange={handleChange}
-                  className="accent-pink-600"
-                />
-                Remember me
-              </label>
-
-              <Link to="/forgot" className="text-pink-600 hover:underline">
-                Forgot Password?
-              </Link>
-            </div>
-
             {/* BUTTON */}
             <button
               disabled={loading}
@@ -188,34 +170,6 @@ const Login = () => {
               {loading ? "Authenticating..." : "Login"}
             </button>
           </form>
-
-          {/* SOCIAL */}
-          <div className="mt-8">
-            <div className="relative flex items-center justify-center mb-6">
-              <div className="border-t w-full border-gray-200"></div>
-              <span className="bg-white px-4 text-xs text-gray-400 uppercase absolute">
-                or continue with
-              </span>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <button className="flex items-center justify-center gap-2 border p-2.5 rounded-lg hover:bg-gray-50">
-                <img
-                  src="https://www.svgrepo.com/show/475656/google-color.svg"
-                  className="size-5"
-                />
-                <span className="text-sm font-medium">Google</span>
-              </button>
-
-              <button className="flex items-center justify-center gap-2 border p-2.5 rounded-lg hover:bg-gray-50">
-                <img
-                  src="https://www.svgrepo.com/show/475647/facebook-color.svg"
-                  className="size-5"
-                />
-                <span className="text-sm font-medium">Facebook</span>
-              </button>
-            </div>
-          </div>
 
           <p className="mt-8 text-center text-sm text-gray-600">
             Don't have an account?{" "}
