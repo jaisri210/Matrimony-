@@ -15,6 +15,10 @@ import Chat from "../src/pages/Chat.jsx";
 import ProtectedRoute from "../src/components/ProtectedRoute.jsx";
 import Views from "../src/pages/Views.jsx";
 import Shortlist from "../src/pages/ShortList.jsx";
+import EmailSupport from "../src/pages/EmailSupport.jsx";
+import HelpCenter from "../src/pages/HelpCenter.jsx";
+import PrivacyPolicy from "../src/pages/PrivacyPolicy.jsx";
+import TermsConditions from "../src/pages/TermsConditions.jsx";
 
 export default function UserRoutes() {
   return (
@@ -38,6 +42,11 @@ export default function UserRoutes() {
           <Route path="/plans" element={<Plans />} />
           <Route path="/chat/:userId" element={<Chat />} />
           <Route path="/views" element={<Views />} />
+
+          <Route path="/email-support" element={<EmailSupport />} />
+          <Route path="/help-center" element={<HelpCenter />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
         </Route>
       </Route>
     </Routes>

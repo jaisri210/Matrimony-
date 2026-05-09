@@ -386,6 +386,115 @@ export default function Dashboard() {
           </div>
         )}
       </div>
+
+      <footer className="bg-white border-t mt-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-10">
+          <div className="grid md:grid-cols-4 gap-8">
+            {/* COMPANY */}
+            <div>
+              <h2
+                className={`text-2xl font-bold bg-gradient-to-r ${COLORS.primary} bg-clip-text text-transparent`}
+              >
+                Company Name
+              </h2>
+
+              <p className="text-gray-600 mt-3 text-sm leading-6">
+                Your company address here.
+              </p>
+            </div>
+
+            {/* QUICK LINKS */}
+            <div>
+              <h3 className="font-semibold text-gray-800 mb-3">Quick Links</h3>
+
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="/" className="hover:text-pink-500 transition">
+                    Home
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/matches" className="hover:text-pink-500 transition">
+                    Matches
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/plans" className="hover:text-pink-500 transition">
+                    Plans
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/profile" className="hover:text-pink-500 transition">
+                    Profile
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* SUPPORT */}
+            <div>
+              <h3 className="font-semibold text-gray-800 mb-3">Support</h3>
+
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>
+                  <a
+                    href="/email-support"
+                    className="hover:text-pink-500 transition"
+                  >
+                    Email Support
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/help-center"
+                    className="hover:text-pink-500 transition"
+                  >
+                    Help Center
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/privacy-policy"
+                    className="hover:text-pink-500 transition"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/terms-conditions"
+                    className="hover:text-pink-500 transition"
+                  >
+                    Terms & Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* CONTACT */}
+            <div>
+              <h3 className="font-semibold text-gray-800 mb-3">Contact</h3>
+
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>Phone: +91 8220043041</li>
+                <li>Email: info@skiezdigital.com</li>
+                <li>Working Hours: 9 AM - 6 PM</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* BOTTOM */}
+          <div className="border-t mt-8 pt-4 text-center text-sm text-gray-500">
+            © {new Date().getFullYear()} Skiez Digital. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

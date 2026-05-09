@@ -42,7 +42,7 @@ export default function Plans() {
       console.log("ORDER:", data);
       // 2️⃣ Razorpay config
       const options = {
-        key: "rzp_live_SmlQDAlL6aMWgl",
+        key: import.meta.env.VITE_RAZORPAY_KEY,
         amount: data.amount,
         currency: "INR",
         order_id: data.id,
