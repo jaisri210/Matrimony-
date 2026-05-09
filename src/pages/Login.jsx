@@ -74,7 +74,7 @@ const Login = () => {
           <div>
             <h1 className="text-2xl font-bold flex items-center gap-2">
               <Heart className="text-[#701a28] fill-[#701a28]" size={20} />
-              SoulKnot Matrimony
+              Royal Matrimony
             </h1>
 
             <div className="mt-20">

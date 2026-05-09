@@ -64,7 +64,7 @@ export default function Register() {
               <div className="bg-white p-1.5 rounded-lg">
                 <Heart className="text-[#701a28] fill-[#701a28]" size={20} />
               </div>
-              <span className="font-bold text-xl">Sowmya Matrimony</span>
+              <span className="font-bold text-xl">Royal Matrimony</span>
             </div>
 
             <h1 className="text-4xl font-serif leading-tight">
