@@ -5,8 +5,8 @@ import {
   uploadPhotos,
   deletePhoto,
   setProfilePic,
-  getMyPlan,
 } from "../services/profileApi";
+import { getMyPlan } from "../services/planApi";
 import toast from "react-hot-toast";
 
 const TABS = [
