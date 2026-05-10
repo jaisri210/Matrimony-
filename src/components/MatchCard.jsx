@@ -16,6 +16,24 @@ export default function MatchCard({ user, matchPercent = 75 }) {
     fetchPlan();
   }, []);
 
+  useEffect(() => {
+    checkShortlist();
+  }, []);
+
+  const checkShortlist = async () => {
+    try {
+      const res = await API.get("/shortlist");
+
+      const id = user?.userId?._id || user?._id;
+
+      const exists = res.data.some((u) => u._id === id);
+
+      setShortlisted(exists);
+    } catch (err) {
+      console.log("Shortlist fetch error", err);
+    }
+  };
+
   const fetchPlan = async () => {
     try {
       const res = await API.get("/plan/me");
