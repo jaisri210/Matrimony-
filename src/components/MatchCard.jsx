@@ -117,7 +117,13 @@ export default function MatchCard({ user, matchPercent = 75 }) {
       toast.error("Something went wrong");
     }
   };
+  const getImageUrl = (img) => {
+    if (!img) return "/profile_avatar.png";
 
+    return `https://matrimony-server-ungl.onrender.com/uploads/${img
+      .replace("/uploads/", "")
+      .replace("uploads/", "")}`;
+  };
   return (
     <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
       {/* IMAGE + SHORTLIST */}
@@ -136,16 +142,12 @@ export default function MatchCard({ user, matchPercent = 75 }) {
         </button>
 
         <img
-          src={
-            user?.photos?.[0]
-              ? `https://matrimony-server-ungl.onrender.com/uploads/${user.photos[0]}`
-              : "/profile_avatar.png"
-          }
+          src={getImageUrl(user?.profilePic || user?.photos?.[0])}
           alt="profile"
           onError={(e) => {
             e.target.src = "/profile_avatar.png";
           }}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-cover"
         />
       </div>
 

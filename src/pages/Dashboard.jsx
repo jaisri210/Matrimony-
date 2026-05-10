@@ -59,8 +59,10 @@ export default function Dashboard() {
 
       setFilters(updatedFilters);
 
-      // ✅ FETCH USING PREFERENCES
-      fetchProfiles(updatedFilters, valid);
+      // small delay so state updates properly
+      setTimeout(() => {
+        fetchProfiles(updatedFilters, valid);
+      }, 100);
     } catch (err) {
       console.log("User fetch error:", err);
     }
