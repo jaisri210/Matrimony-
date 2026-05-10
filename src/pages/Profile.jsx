@@ -35,8 +35,11 @@ export default function Profile() {
 
   const fetchPlan = async () => {
     try {
-      const data = await getMyPlan();
-      setPlan(data.subscription || "free");
+      const currentPlan = data.subscription || "free";
+
+      setPlan(currentPlan);
+
+      localStorage.setItem("plan", currentPlan);
     } catch {
       console.log("Plan fetch error");
     }
