@@ -45,6 +45,7 @@ const Login = () => {
       // ✅ store properly
       localStorage.setItem("userId", user._id);
       localStorage.setItem("token", token);
+      localStorage.setItem("plan", user.subscription || "free");
       localStorage.setItem("user", JSON.stringify(user));
 
       console.log("LOGIN USER:", user);
