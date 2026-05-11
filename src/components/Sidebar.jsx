@@ -96,7 +96,7 @@ export default function Sidebar() {
     <>
       {/* 🔥 MOBILE TOP BAR */}
       <div className="md:hidden fixed top-0 left-0 right-0 bg-white shadow flex items-center justify-between px-4 py-3 z-50">
-        <h2 className="font-bold text-pink-500">❤️ Royal Matrimony</h2>
+        <h2 className="font-bold text-pink-500">❤️Royal Matrimony</h2>
 
         <button onClick={() => setOpen(true)}>
           <Menu />
