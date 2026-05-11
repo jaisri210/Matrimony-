@@ -139,6 +139,15 @@ export default function MobileVerification() {
       // ✅ STORE VERIFIED FLAG
       localStorage.setItem("isVerified", "true");
 
+      // ✅ UPDATE USER OBJECT ALSO
+      const user = JSON.parse(localStorage.getItem("user"));
+
+      if (user) {
+        user.isPhoneVerified = true;
+
+        localStorage.setItem("user", JSON.stringify(user));
+      }
+
       // ✅ REDIRECT
       navigate("/dashboard");
     } catch (err) {
