@@ -41,13 +41,14 @@ const Login = () => {
         throw new Error("Invalid login response");
       }
 
+      localStorage.clear();
       // ✅ store properly
       localStorage.setItem("userId", user._id);
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
 
       console.log("LOGIN USER:", user);
-
+      console.log("PHONE VERIFIED:", user.isPhoneVerified);
       // ✅ redirect based on phone verification
       if (!user.isPhoneVerified) {
         navigate("/mobileverify");
