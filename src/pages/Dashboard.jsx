@@ -445,6 +445,33 @@ export default function Dashboard() {
               <ul className="space-y-2 text-sm text-gray-600">
                 <li>
                   <Link
+                    to="/about-us"
+                    className="hover:text-pink-500 transition"
+                  >
+                    About Us
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/contact-us"
+                    className="hover:text-pink-500 transition"
+                  >
+                    Contact Us
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/refund-policy"
+                    className="hover:text-pink-500 transition"
+                  >
+                    Refund Policy
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
                     to="/email-support"
                     className="hover:text-pink-500 transition"
                   >

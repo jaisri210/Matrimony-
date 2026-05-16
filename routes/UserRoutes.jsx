@@ -18,6 +18,9 @@ import Views from "../src/pages/Views.jsx";
 import Shortlist from "../src/pages/ShortList.jsx";
 import EmailSupport from "../src/pages/EmailSupport.jsx";
 import HelpCenter from "../src/pages/HelpCenter.jsx";
+import AboutUs from "../src/pages/AboutUs.jsx";
+import ContactUs from "../src/pages/ContactUs.jsx";
+import RefundPolicy from "../src/pages/RefundPolicy.jsx";
 import PrivacyPolicy from "../src/pages/PrivacyPolicy.jsx";
 import TermsConditions from "../src/pages/TermsConditions.jsx";
 
@@ -46,6 +49,9 @@ export default function UserRoutes() {
           <Route path="/views" element={<Views />} />
 
           <Route path="/email-support" element={<EmailSupport />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="/help-center" element={<HelpCenter />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
