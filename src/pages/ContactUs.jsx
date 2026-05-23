@@ -9,7 +9,7 @@ export default function ContactUs() {
         </p>
 
         <p>
-          <strong>Phone:</strong> +91 8220043041
+          <strong>Phone:</strong> +91 9994401291
         </p>
 
         <p>

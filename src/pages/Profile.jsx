@@ -29,6 +29,7 @@ export default function Profile() {
   useEffect(() => {
     fetchProfile();
   }, []);
+
   useEffect(() => {
     fetchPlan();
   }, []);

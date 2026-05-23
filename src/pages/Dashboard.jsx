@@ -512,7 +512,7 @@ export default function Dashboard() {
               <h3 className="font-semibold text-gray-800 mb-3">Contact</h3>
 
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>Phone: +91 8220043041</li>
+                <li>Phone: +91 9994401291</li>
                 <li>Email: info@skiezdigital.com</li>
                 <li>Working Hours: 9 AM - 6 PM</li>
               </ul>
