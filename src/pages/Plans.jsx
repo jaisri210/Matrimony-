@@ -37,6 +37,38 @@ export default function Plans() {
   //  PAYMENT HANDLER
   const handlePayment = async () => {
     try {
+      // ✅ LOAD RAZORPAY SDK DYNAMICALLY
+      const loadRazorpay = () => {
+        return new Promise((resolve) => {
+          const script = document.createElement("script");
+
+          script.src = "https://checkout.razorpay.com/v1/checkout.js";
+
+          script.onload = () => {
+            resolve(true);
+          };
+
+          script.onerror = () => {
+            resolve(false);
+          };
+
+          document.body.appendChild(script);
+        });
+      };
+
+      const sdkLoaded = await loadRazorpay();
+
+      // ✅ SDK FAILED
+      if (!sdkLoaded) {
+        toast.error("Razorpay SDK failed to load");
+        return;
+      }
+
+      // ✅ CHECK WINDOW RAZORPAY
+      if (!window.Razorpay) {
+        toast.error("Razorpay not available");
+        return;
+      }
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
 
