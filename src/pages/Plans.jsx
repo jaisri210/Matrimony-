@@ -11,10 +11,12 @@ export default function Plans() {
 
   useEffect(() => {
     fetchPlans();
+
     fetchMyPlan();
   }, []);
 
   const fetchPlans = async () => {
+    a;
     try {
       const data = await getPlans();
       setPlans(data);
@@ -32,15 +34,16 @@ export default function Plans() {
     }
   };
 
-  // 💰 PAYMENT HANDLER
+  //  PAYMENT HANDLER
   const handlePayment = async () => {
     try {
+      const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
 
-      // 1️⃣ Create order
+      // 1️ Create order
       const { data } = await API.post("/payment/create-order");
       console.log("ORDER:", data);
-      // 2️⃣ Razorpay config
+      // 2️ Razorpay config
       const options = {
         key: import.meta.env.VITE_RAZORPAY_KEY,
         amount: data.amount,
@@ -51,8 +54,9 @@ export default function Plans() {
         description: "Premium Plan",
 
         prefill: {
-          name: "User",
-          email: "test@test.com",
+          name: user?.name,
+          email: user?.email,
+          contact: user?.phone,
         },
 
         handler: async function (response) {
@@ -78,7 +82,7 @@ export default function Plans() {
         },
       };
       console.log("RAZORPAY OPTIONS:", options);
-      // ✅ remove old cached popup
+      //  remove old cached popup
       document
         .querySelectorAll(".razorpay-container")
         .forEach((e) => e.remove());

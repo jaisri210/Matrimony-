@@ -34,6 +34,7 @@ export default function MobileNav() {
         Profile
       </NavLink>
 
+
       <NavLink to="/received" className={linkClass}>
         <MailPlusIcon size={20} />
         Received
@@ -44,5 +45,6 @@ export default function MobileNav() {
         Sent
       </NavLink>
     </div>
+    
   );
 }
