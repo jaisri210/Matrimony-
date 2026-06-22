@@ -1,8 +1,8 @@
 import { io } from "socket.io-client";
 
-const socket = io(import.meta.env.VITE_API_URL, {
+const socket = io("https://mony.bazhilgroups.in", {
   autoConnect: false, // ✅ IMPORTANT
-  transports: ["websocket"], // optional but stable
+  transports: ["polling","websocket"], // optional but stable
 });
 
 export default socket;
