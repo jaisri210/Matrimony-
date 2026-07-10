@@ -92,7 +92,7 @@ const data = await orderRes.json();
       // OPTIONS
       // =========================
       const options = {
-        key: "rzp_live_T4ZJrIbGj17pJK",
+        key: import.meta.env.VITE_RAZORPAY_KEY,
 
         amount: data.amount,
 
@@ -104,11 +104,11 @@ const data = await orderRes.json();
 
         description: "Premium Plan",
 
-        prefill: {
-          name: user?.name || "",
-          email: user?.email || "",
-          contact: user?.phone || "",
-        },
+        // prefill: {
+        //   name: user?.name || "",
+        //   email: user?.email || "",
+        //   contact: user?.phone || "",
+        // },
 
         theme: {
           color: "#ec4899",
