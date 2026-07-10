@@ -32,6 +32,7 @@ export default function UserRoutes() {
       <Route path="/login" element={<Login />} />
       <Route path="/mobileverify" element={<MobileVerification />} />
       <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/plans" element={<Plans />} />
 
       {/*  PROTECTED ROUTES */}
       <Route element={<ProtectedRoute />}>
@@ -44,7 +45,7 @@ export default function UserRoutes() {
           <Route path="/received" element={<Received />} />
           <Route path="/sent" element={<Sent />} />
           <Route path="/shortlist" element={<Shortlist />} />
-          <Route path="/plans" element={<Plans />} />
+          
           <Route path="/chat/:userId" element={<Chat />} />
           <Route path="/views" element={<Views />} />
 
