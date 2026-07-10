@@ -91,18 +91,18 @@ const data = await orderRes.json();
       // =========================
       // OPTIONS
       // =========================
-      const options = {
-        key: import.meta.env.VITE_RAZORPAY_KEY,
+      // const options = {
+      //   key: import.meta.env.VITE_RAZORPAY_KEY,
 
-        amount: data.amount,
+      //   amount: data.amount,
 
-        currency: "INR",
+      //   currency: "INR",
 
-        order_id: data.id,
+      //   order_id: data.id,
 
-        name: "Royal Matrimony",
+      //   name: "Royal Matrimony",
 
-        description: "Premium Plan",
+      //   description: "Premium Plan",
 
         // prefill: {
         //   name: user?.name || "",
@@ -110,15 +110,41 @@ const data = await orderRes.json();
         //   contact: user?.phone || "",
         // },
 
-        theme: {
-          color: "#ec4899",
-        },
+        // theme: {
+        //   color: "#ec4899",
+        // },
 
-        modal: {
-          ondismiss: function () {
-            console.log("Payment popup closed");
-          },
+        // modal: {
+        //   ondismiss: function () {
+        //     console.log("Payment popup closed");
+        //   },
+        // },
+      const options = {
+  key: "rzp_live_T4ZJrIbGj17pJK",
+  amount: data.amount,
+  currency: data.currency,
+  order_id: data.id,
+  name: "Royal Matrimony",
+  description: "Premium Plan",
+
+  handler: async function (response) {
+    console.log("PAYMENT SUCCESS:", response);
+
+    const verifyResponse = await fetch(
+      "https://mony.bazhilgroups.in/api/payment/verify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
         },
+        body: JSON.stringify(response),
+      }
+    );
+
+    console.log(await verifyResponse.json());
+  },
+};
 
         // =========================
         // SUCCESS HANDLER
